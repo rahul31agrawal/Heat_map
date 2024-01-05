@@ -22,7 +22,7 @@ col1, col2 = st.columns((2))
 st.sidebar.header("Choose your filter: ")
 # Create for Category
 
-default_dpc_values = ['DPC406', 'DPC1030','DPC1018','DPC1007','DPC1715','DPC1040','DPC1600','DPC2063',]
+default_dpc_values = ['DPC406','DPC1715','DPC1600']
 
 dpc = st.sidebar.multiselect("Select DPC's", df["dpc_number"].unique(),default=default_dpc_values)
 
