@@ -9,7 +9,7 @@ import seaborn as sns
 warnings.filterwarnings('ignore')
 st.set_page_config(page_title="Davis Prices Analytics!!!", page_icon=":bar_chart:",layout="wide")
 
-st.title(" :bar_chart: Prices EDA")
+st.title(" :bar_chart: Heatmap for DPC's")
 st.markdown('<style>div.block-container{padding-top:1rem;} </style>',unsafe_allow_html=True)
 
 df = pd.read_excel("6 month davis pricesheets excluded exchange.xlsx")
