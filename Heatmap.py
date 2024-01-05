@@ -12,14 +12,17 @@ st.set_page_config(page_title="Davis Prices Analytics!!!", page_icon=":bar_chart
 st.title(" :bar_chart: Prices EDA")
 st.markdown('<style>div.block-container{padding-top:1rem;} </style>',unsafe_allow_html=True)
 
-df = pd.read_excel("davis_pricesheets 6 months.xlsx")
+df = pd.read_excel("6 month davis pricesheets excluded exchange.xlsx")
+df['assesment_frequency'] = df['assesment_frequency'].replace(['weekly', 'monthly', 'daily'], ['Weekly', 'Monthly', 'Daily'])
+filtered_df = df[df['assesment_frequency'].isin(['Monthly', 'Bi-weekly', 'Daily', 'Weekly'])]
+df = filtered_df
 
 col1, col2 = st.columns((2))
 
 st.sidebar.header("Choose your filter: ")
 # Create for Category
 
-default_dpc_values = ['DPC1103', 'DPC1192']
+default_dpc_values = ['DPC406', 'DPC407']
 
 dpc = st.sidebar.multiselect("Select DPC's", df["dpc_number"].unique(),default=default_dpc_values)
 
